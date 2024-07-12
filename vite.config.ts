@@ -22,6 +22,7 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
+      // 配置src目录别名
       '@': path.join(__dirname, 'src')
     }
   },
