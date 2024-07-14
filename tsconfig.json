@@ -1,4 +1,11 @@
 {
+  "compilerOptions": {
+    // 解决vscode无法识别@符
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
   "files": [],
   "references": [
     {
