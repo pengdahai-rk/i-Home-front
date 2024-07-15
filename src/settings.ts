@@ -1,6 +1,9 @@
-import { ThemeEnum } from "./enums/ThemeEnum";
+import { SizeEnum } from '@/enums/SizeEnum'
+import { LayoutEnum } from '@/enums/LayoutEnum'
+import { ThemeEnum } from '@/enums/ThemeEnum'
+import { LanguageEnum } from '@/enums/LanguageEnum'
 
-const { pkg } = __APP_INFO__;
+const { pkg } = __APP_INFO__
 
 const defaultSettings: AppSettings = {
   title: pkg.name,
@@ -13,9 +16,9 @@ const defaultSettings: AppSettings = {
   theme: ThemeEnum.LIGHT,
   size: SizeEnum.DEFAULT,
   language: LanguageEnum.ZH_CN,
-  themeColor: "#409EFF",
+  themeColor: '#409EFF',
   watermarkEnabled: false,
-  watermarkContent: pkg.name,
-};
+  watermarkContent: pkg.name
+}
 
-export default defaultSettings;
+export default defaultSettings
