@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <main>
-    <TheWelcome />
-  </main>
+  <div>
+    我是Home页
+  </div>
 </template>
