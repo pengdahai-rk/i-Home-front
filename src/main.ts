@@ -8,6 +8,8 @@ import { createPinia } from 'pinia'
 import App from '@/App.vue'
 // 引入vue-router
 import router from '@/router'
+// 引入全量Element Icon
+import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 
 // 创建应用
 const app = createApp(App)
@@ -15,5 +17,9 @@ const app = createApp(App)
 app.use(createPinia())
 // 使用vue-router做路由
 app.use(router)
+// 使用全量ElementPlusIcon
+for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
+    app.component(key, component)
+  }
 // 挂载应用
 app.mount('#app')
