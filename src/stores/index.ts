@@ -7,5 +7,5 @@ const store = createPinia();
 export function setupStore(app: App<Element>) {
   app.use(store);
 }
-export * from "./modules/settings";
+export * from "@/stores/modules/settings";
 export { store };
