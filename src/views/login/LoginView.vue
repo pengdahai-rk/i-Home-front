@@ -1,9 +1,9 @@
-<script setup lang='ts'>
-import { ref } from 'vue'
-import type { Ref } from 'vue'
-const msg: Ref<string> = ref('hello vue3 component')
-</script>
 <template>
-    <div>{{ msg }}</div>
+    <div>
+        我是登录页
+    </div>
 </template>
-<style lang="less" scoped></style>
+<script setup lang="ts">
+
+</script>
+<style lang="less"></style>

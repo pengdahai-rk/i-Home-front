@@ -1,15 +1,21 @@
 <script setup lang="ts">
 // JS或TS
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterView } from 'vue-router'
 </script>
 
 <template>
+
   <div>
-    <h1>你好！</h1>
+    <nav>
+      <RouterLink to="/">Home</RouterLink>
+      <RouterLink to="/user">User</RouterLink>
+      <RouterLink to="/login">Login</RouterLink>
+    </nav>
   </div>
+  <!-- 父路由 -->
+  <RouterView />
 </template>
 
 <style scoped>
 /* 样式 */
-
 </style>
