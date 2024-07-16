@@ -53,6 +53,7 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
       VueDevTools(),
       UnoCSS({
         // 添加配置
+        hmrTopLevelAwait: false
       }),
       // 自动导入参考： https://github.com/sxzz/element-plus-best-practices/blob/main/vite.config.ts
       AutoImport({
