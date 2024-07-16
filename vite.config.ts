@@ -12,12 +12,26 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue(), vueJsx(), VueDevTools(),
+  plugins: [
+    vue(),
+    vueJsx(),
+    VueDevTools(),
+    // 自动导入参考： https://github.com/sxzz/element-plus-best-practices/blob/main/vite.config.ts
     AutoImport({
-      resolvers:[ElementPlusResolver()],
+      // 自动导入 Vue 相关函数，如：ref, reactive, toRef 等
+      imports: ['vue', '@vueuse/core', 'pinia', 'vue-router', 'vue-i18n'],
+      resolvers: [
+        // 自动导入 Element Plus 相关函数，如：ElMessage, ElMessageBox... (带样式)
+        ElementPlusResolver()
+      ],
+      // 是否在 vue 模板中自动导入
+      vueTemplate: true,
+      // 导入配置 __dirname当前文件目录
+      dts: path.resolve(__dirname, 'auto-imports.d.ts')
     }),
     Components({
-      resolvers:[ElementPlusResolver()],
+      resolvers: [ElementPlusResolver()],
+      dts: path.resolve(__dirname, 'components.d.ts')
     })
   ],
   resolve: {

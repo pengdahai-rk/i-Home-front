@@ -1,9 +1,6 @@
 import defaultSettings from '@/settings'
 import { ThemeEnum } from '@/enums/ThemeEnum'
 import Color from 'color'
-import { defineStore } from 'pinia'
-import { ref, watch, type Ref } from 'vue'
-import { useStorage } from '@vueuse/core'
 
 type SettingsValue = boolean | string
 
