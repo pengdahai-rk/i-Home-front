@@ -6,7 +6,7 @@ import path from 'node:path'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
-
+import UnoCSS from 'unocss/vite'
 import { name, version, dependencies, devDependencies } from './package.json'
 
 /** 平台的名称、版本、依赖、构建时间的类型提示 */
@@ -33,6 +33,9 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
       vue(),
       vueJsx(),
       VueDevTools(),
+      UnoCSS({
+        // 添加配置
+      }),
       // 自动导入参考： https://github.com/sxzz/element-plus-best-practices/blob/main/vite.config.ts
       AutoImport({
         // 自动导入 Vue 相关函数，如：ref, reactive, toRef 等

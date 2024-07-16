@@ -11,6 +11,10 @@ import router from '@/router'
 // 引入全量Element Icon
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 
+// 样式
+import "element-plus/theme-chalk/dark/css-vars.css";
+import "virtual:uno.css"
+
 // 创建应用
 const app = createApp(App)
 // 全局注册 状态管理(store)
