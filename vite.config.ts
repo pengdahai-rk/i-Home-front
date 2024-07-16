@@ -29,6 +29,24 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
       //   key: fs.readFileSync(path.join(__dirname, 'src/ssl/cert.key'))
       // }
     },
+    resolve: {
+      alias: {
+        // 配置src目录别名
+        '@': pathSrc
+      }
+    },
+    css: {
+      // CSS 预处理器
+      preprocessorOptions: {
+        // 定义全局 SCSS 变量
+        scss: {
+          javascriptEnabled: true,
+          additionalData: `
+            @use "@/styles/variables.scss" as *;
+          `
+        }
+      }
+    },
     plugins: [
       vue(),
       vueJsx(),
@@ -54,12 +72,6 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
         dts: path.resolve(__dirname, 'components.d.ts')
       })
     ],
-    resolve: {
-      alias: {
-        // 配置src目录别名
-        '@': path.join(__dirname, 'src')
-      }
-    },
     // 构建配置
     build: {
       chunkSizeWarningLimit: 2000, // 消除打包大小超过500kb警告
