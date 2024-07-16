@@ -16,6 +16,7 @@
   "dependencies": {
     "@element-plus/icons-vue": "^2.3.1",
     "@vueuse/core": "^10.11.0",
+    "axios": "^1.7.2",
     "color": "^4.2.3",
     "element-plus": "^2.7.7",
     "pinia": "^2.1.7",
@@ -40,7 +41,9 @@
     "jsdom": "^24.0.0",
     "npm-run-all2": "^6.1.2",
     "prettier": "^3.2.5",
+    "sass": "^1.77.6",
     "typescript": "~5.4.0",
+    "unocss": "^0.61.3",
     "unplugin-auto-import": "^0.17.6",
     "unplugin-vue-components": "^0.27.2",
     "vite": "^5.2.8",
