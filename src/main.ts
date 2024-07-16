@@ -1,5 +1,3 @@
-// 引入主css
-import '@/assets/main.css'
 // 引入根组件创建函数createApp
 import { createApp } from 'vue'
 // 引入状态管理器配置
