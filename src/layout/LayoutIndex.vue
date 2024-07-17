@@ -3,6 +3,14 @@
         <!-- 遮罩层 -->
         <div v-if="isMobile && isOpenSidebar" class="wh-full fixed-lt z-999 bg-black bg-opacity-30"
             @click="handleOutsideClick"></div>
+
+        <!-- 左侧和顶部布局 -->
+        <div v-else :class="{ hasTagsView: showTagsView }" class="main-container">
+            <div :class="{ 'fixed-header': fixedHeader }">
+                <NavBar />
+            </div>
+            <AppMain />
+        </div>
     </div>
 </template>
 <script setup lang="ts">
