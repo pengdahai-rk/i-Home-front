@@ -1,9 +1,9 @@
 <template>
     <div>
-        我是LayoutIndex
+        我是DemoComponent
     </div>
 </template>
 <script setup lang="ts">
 
 </script>
-<style lang="scss" scoped></style>
+<style lang="scss"></style>

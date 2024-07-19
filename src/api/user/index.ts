@@ -1,15 +1,15 @@
-import request from "@/utils/request";
-import type { AxiosPromise } from "axios";
-import type { UserForm, UserInfo, UserPageVO, UserQuery } from "./types";
+import request from '@/utils/request'
+import type { AxiosPromise } from 'axios'
+import type { UserForm, UserInfo, UserPageVO, UserQuery } from './types'
 
 /**
  * 登录成功后获取用户信息（昵称、头像、权限集合和角色集合）
  */
 export function getUserInfoApi(): AxiosPromise<UserInfo> {
   return request({
-    url: "/api/v1/users/me",
-    method: "get",
-  });
+    url: '/api/v1/users/me',
+    method: 'get'
+  })
 }
 
 /**
@@ -17,14 +17,12 @@ export function getUserInfoApi(): AxiosPromise<UserInfo> {
  *
  * @param queryParams
  */
-export function getUserPage(
-  queryParams: UserQuery
-): AxiosPromise<PageResult<UserPageVO[]>> {
+export function getUserPage(queryParams: UserQuery): AxiosPromise<PageResult<UserPageVO[]>> {
   return request({
-    url: "/api/v1/users/page",
-    method: "get",
-    params: queryParams,
-  });
+    url: '/api/v1/users/page',
+    method: 'get',
+    params: queryParams
+  })
 }
 
 /**
@@ -34,9 +32,9 @@ export function getUserPage(
  */
 export function getUserForm(userId: number): AxiosPromise<UserForm> {
   return request({
-    url: "/api/v1/users/" + userId + "/form",
-    method: "get",
-  });
+    url: '/api/v1/users/' + userId + '/form',
+    method: 'get'
+  })
 }
 
 /**
@@ -46,10 +44,10 @@ export function getUserForm(userId: number): AxiosPromise<UserForm> {
  */
 export function addUser(data: any) {
   return request({
-    url: "/api/v1/users",
-    method: "post",
-    data: data,
-  });
+    url: '/api/v1/users',
+    method: 'post',
+    data: data
+  })
 }
 
 /**
@@ -60,10 +58,10 @@ export function addUser(data: any) {
  */
 export function updateUser(id: number, data: UserForm) {
   return request({
-    url: "/api/v1/users/" + id,
-    method: "put",
-    data: data,
-  });
+    url: '/api/v1/users/' + id,
+    method: 'put',
+    data: data
+  })
 }
 
 /**
@@ -74,10 +72,10 @@ export function updateUser(id: number, data: UserForm) {
  */
 export function updateUserPassword(id: number, password: string) {
   return request({
-    url: "/api/v1/users/" + id + "/password",
-    method: "patch",
-    params: { password: password },
-  });
+    url: '/api/v1/users/' + id + '/password',
+    method: 'patch',
+    params: { password: password }
+  })
 }
 
 /**
@@ -87,9 +85,9 @@ export function updateUserPassword(id: number, password: string) {
  */
 export function deleteUsers(ids: string) {
   return request({
-    url: "/api/v1/users/" + ids,
-    method: "delete",
-  });
+    url: '/api/v1/users/' + ids,
+    method: 'delete'
+  })
 }
 
 /**
@@ -99,10 +97,10 @@ export function deleteUsers(ids: string) {
  */
 export function downloadTemplateApi() {
   return request({
-    url: "/api/v1/users/template",
-    method: "get",
-    responseType: "arraybuffer",
-  });
+    url: '/api/v1/users/template',
+    method: 'get',
+    responseType: 'arraybuffer'
+  })
 }
 
 /**
@@ -113,11 +111,11 @@ export function downloadTemplateApi() {
  */
 export function exportUser(queryParams: UserQuery) {
   return request({
-    url: "/api/v1/users/_export",
-    method: "get",
+    url: '/api/v1/users/_export',
+    method: 'get',
     params: queryParams,
-    responseType: "arraybuffer",
-  });
+    responseType: 'arraybuffer'
+  })
 }
 
 /**
@@ -126,15 +124,15 @@ export function exportUser(queryParams: UserQuery) {
  * @param file
  */
 export function importUser(deptId: number, file: File) {
-  const formData = new FormData();
-  formData.append("file", file);
+  const formData = new FormData()
+  formData.append('file', file)
   return request({
-    url: "/api/v1/users/_import",
-    method: "post",
+    url: '/api/v1/users/_import',
+    method: 'post',
     params: { deptId: deptId },
     data: formData,
     headers: {
-      "Content-Type": "multipart/form-data",
-    },
-  });
+      'Content-Type': 'multipart/form-data'
+    }
+  })
 }
