@@ -7,17 +7,14 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
-    BaseHeader: typeof import('./src/components/layout/BaseHeader.vue')['default']
-    Breadcrumb: typeof import('./src/components/Breadcrumb.vue')['default']
-    BreadCrumb: typeof import('./src/components/BreadCrumb.vue')['default']
+    AppMain: typeof import('./src/layout/components/AppMain.vue')['default']
     BreadcrumbComponent: typeof import('./src/components/BreadcrumbComponent.vue')['default']
-    BreadcrumbTag: typeof import('./src/components/BreadcrumbTag.vue')['default']
-    ElAside: typeof import('element-plus/es')['ElAside']
-    ElContainer: typeof import('element-plus/es')['ElContainer']
-    ElFooter: typeof import('element-plus/es')['ElFooter']
-    ElHeader: typeof import('element-plus/es')['ElHeader']
-    ElMain: typeof import('element-plus/es')['ElMain']
-    ElSwitch: typeof import('element-plus/es')['ElSwitch']
+    Demo: typeof import('./src/components/Demo.vue')['default']
+    DemoComponent: typeof import('./src/components/DemoComponent.vue')['default']
+    DemoComPonent: typeof import('./src/components/DemoComponent.vue')['default']
+    ElBreadcrumb: typeof import('element-plus/es')['ElBreadcrumb']
+    ElBreadcrumbItem: typeof import('element-plus/es')['ElBreadcrumbItem']
+    NavBar: typeof import('./src/layout/components/NavBar.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

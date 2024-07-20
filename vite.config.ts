@@ -70,6 +70,8 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
       }),
       Components({
         resolvers: [ElementPlusResolver()],
+        // 指定自定义组件位置(默认:src/components)
+        dirs: ['src/components', 'src/**/components'],
         dts: path.resolve(__dirname, 'components.d.ts')
       })
     ],
