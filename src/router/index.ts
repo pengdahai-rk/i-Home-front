@@ -22,6 +22,16 @@ export const constantRouter: RouteRecordRaw[] = [
           keepAlive: true,
           alwaysShow: false
         }
+      },
+      {
+        path: '401',
+        component: () => import('@/views/error-page/401.vue'),
+        meta: { hidden: true }
+      },
+      {
+        path: '404',
+        component: () => import('@/views/error-page/404.vue'),
+        meta: { hidden: true }
       }
     ]
   },
