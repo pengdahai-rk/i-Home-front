@@ -69,6 +69,10 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
         dts: path.resolve(__dirname, 'auto-imports.d.ts')
       }),
       Components({
+        // allow auto load markdown components under `./src/components/`
+        extensions: ['vue', 'md'],
+        // allow auto import and register components used in markdown
+        include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
         resolvers: [ElementPlusResolver()],
         // 指定自定义组件位置(默认:src/components)
         dirs: ['src/components', 'src/**/components'],
