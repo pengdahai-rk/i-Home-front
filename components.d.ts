@@ -8,12 +8,18 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     AppMain: typeof import('./src/layout/components/AppMain.vue')['default']
+    BaseHeader: typeof import('./src/layout/components/BaseHeader.vue')['default']
     BreadcrumbComponent: typeof import('./src/components/BreadcrumbComponent.vue')['default']
     Demo: typeof import('./src/components/Demo.vue')['default']
     DemoComponent: typeof import('./src/components/DemoComponent.vue')['default']
     DemoComPonent: typeof import('./src/components/DemoComponent.vue')['default']
     ElBreadcrumb: typeof import('element-plus/es')['ElBreadcrumb']
     ElBreadcrumbItem: typeof import('element-plus/es')['ElBreadcrumbItem']
+    ElConfigProvider: typeof import('element-plus/es')['ElConfigProvider']
+    ElContainer: typeof import('element-plus/es')['ElContainer']
+    ElFooter: typeof import('element-plus/es')['ElFooter']
+    ElHeader: typeof import('element-plus/es')['ElHeader']
+    ElMain: typeof import('element-plus/es')['ElMain']
     NavBar: typeof import('./src/layout/components/NavBar.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
