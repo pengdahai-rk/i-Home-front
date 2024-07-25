@@ -2,7 +2,11 @@
     <header class="navbar">
         <div class="navbar-wrapper">
             <div class="header-container">
-                
+                <div class="logo-container">
+                    <a href="/">
+                        <img class="logo" src="@/assets/logo.svg" alt="Element Plus Logo" />
+                    </a>
+                </div>
             </div>
         </div>
     </header>
@@ -15,6 +19,7 @@
     left: 0;
     position: relative;
     z-index: var(--nav-z-index);
+    background-color:cyan;
 }
 
 .navbar-wrapper {
@@ -29,21 +34,32 @@
     top: 0
 }
 
-@media screen and (min-width: 768px) {
-    .navbar-wrapper {
-        padding: 0 12px 0 32px
-    }
+.navbar-wrapper .header-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
 }
 
-@media screen and (min-width: 1280px) {
-    .navbar-wrapper {
-        padding: 0 32px
-    }
+.navbar-wrapper .header-container .content {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-grow: 1;
 }
 
-@media screen and (min-width: 1680px) {
-    .navbar-wrapper {
-        padding: 0 48px
-    }
+.logo-container {
+    display: flex;
+    align-items: center;
+    height: var(--header-height);
+}
+
+.logo-container>a {
+    height: 28px;
+    width: 128px;
+}
+
+.logo-container .logo {
+    position: relative;
+    height: 100%;
 }
 </style>
