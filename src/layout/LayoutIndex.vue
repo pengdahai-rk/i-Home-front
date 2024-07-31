@@ -25,9 +25,12 @@
 
 .main-page {
     width: 100%;
+    outline: none;
 }
 
 .footer-text {
     width: 100%;
+    position: absolute;
+    bottom: 0;
 }
 </style>

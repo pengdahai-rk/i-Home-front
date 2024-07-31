@@ -1,4 +1,5 @@
 <template>
+    <el-divider style="margin: 2px;"/>
     <div class="text-center text-xs">
         <p class="mb-1"> Released under the <a href="https://opensource.org/licenses/MIT" target="_blank"
                 rel="noopener noreferer">MIT License</a>. </p>
@@ -8,5 +9,4 @@
 </template>
 <script setup lang="ts">
 </script>
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>

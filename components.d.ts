@@ -12,6 +12,7 @@ declare module 'vue' {
     DemoComponent: typeof import('./src/components/DemoComponent.vue')['default']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElContainer: typeof import('element-plus/es')['ElContainer']
+    ElDivider: typeof import('element-plus/es')['ElDivider']
     ElFooter: typeof import('element-plus/es')['ElFooter']
     ElHeader: typeof import('element-plus/es')['ElHeader']
     ElImg: typeof import('element-plus/es')['ElImg']
