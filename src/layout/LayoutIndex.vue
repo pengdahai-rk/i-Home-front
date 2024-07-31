@@ -1,15 +1,17 @@
 <template>
-    <el-container>
-        <el-header class="header-navbar">
-            <BaseHeader />
-        </el-header>
-        <el-main class="main-page">
-            <router-view></router-view>
-        </el-main>
-        <el-footer class="footer-text">
-            <BaseFooter />
-        </el-footer>
-    </el-container>
+    <el-scrollbar height="100%">
+        <el-container>
+            <el-header class="header-navbar">
+                <BaseHeader />
+            </el-header>
+            <el-main class="main-page">
+                <router-view></router-view>
+            </el-main>
+            <el-footer class="footer-text">
+                <BaseFooter />
+            </el-footer>
+        </el-container>
+    </el-scrollbar>
 </template>
 <script setup lang="ts">
 </script>
