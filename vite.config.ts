@@ -6,6 +6,10 @@ import path from 'node:path'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import Icons from 'unplugin-icons/vite'
+import IconsResolver from 'unplugin-icons/resolver'
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
+import { resolve } from 'path'
 import UnoCSS from 'unocss/vite'
 import { name, version, dependencies, devDependencies } from './package.json'
 
@@ -61,7 +65,9 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
         imports: ['vue', '@vueuse/core', 'pinia', 'vue-router', 'vue-i18n'],
         resolvers: [
           // 自动导入 Element Plus 相关函数，如：ElMessage, ElMessageBox... (带样式)
-          ElementPlusResolver()
+          ElementPlusResolver(),
+          // 自动导入图标组件
+          IconsResolver({})
         ],
         // 是否在 vue 模板中自动导入
         vueTemplate: true,
@@ -73,10 +79,23 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
         extensions: ['vue', 'md'],
         // allow auto import and register components used in markdown
         include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
-        resolvers: [ElementPlusResolver()],
+        resolvers: [
+          ElementPlusResolver(), // 自动注册图标组件
+          IconsResolver({})
+        ],
         // 指定自定义组件位置(默认:src/components)
         dirs: ['src/components', 'src/**/components'],
         dts: path.resolve(__dirname, 'components.d.ts')
+      }),
+      Icons({
+        // 自动安装图标库
+        autoInstall: true
+      }),
+      createSvgIconsPlugin({
+        // 指定需要缓存的图标文件夹
+        iconDirs: [resolve(pathSrc, 'assets/icons')],
+        // 指定symbolId格式
+        symbolId: 'icon-[dir]-[name]'
       })
     ],
     // 构建配置

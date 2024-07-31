@@ -1,6 +1,6 @@
 <template>
     <header class="navbar">
-        <el-menu  :ellipsis="false" mode="horizontal" class="navbar-el-menu">
+        <el-menu :ellipsis="false" mode="horizontal" class="navbar-el-menu">
             <el-menu-item index="1">
                 <a href="/">
                     <img class="logo" src="@/assets/logo.svg" alt="Element Plus Logo" />
@@ -20,15 +20,11 @@
             </el-sub-menu>
             <el-menu-item index="3" disabled>Info</el-menu-item>
             <el-menu-item index="4">Orders</el-menu-item>
-            <el-menu-item h="full">
-                <button class="border-none w-full bg-transparent cursor-pointer"
-                    style="height: var(--ep-menu-item-height)">
-                    <i inline-flex i="dark:ep-moon ep-sunny" />
-                </button>
-            </el-menu-item>
             <div class="flex-grow" />
-            <el-menu-item index="5">Orders</el-menu-item>
-            <el-menu-item index = "6">
+            <el-menu-item h="full">
+                <el-switch v-model="isDark" inline-prompt :active-icon="Moon" :inactive-icon="Sunny" @change="changeTheme"/>
+            </el-menu-item>
+            <el-menu-item index="6">
                 <a href="https://github.com/pengdahai-rk/i-Home-front" title="GitHub" target="_blank"
                     rel="noreferrer noopener" class="social-link"><i class="el-icon" style="font-size: 24px"><svg
                             preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" width="1.2em" height="1.2em">
@@ -41,6 +37,19 @@
     </header>
 </template>
 <script setup lang="ts">
+import { ThemeEnum } from '@/enums/ThemeEnum';
+import { useSettingsStore } from "@/stores";
+import { Moon, Sunny } from '@element-plus/icons-vue';
+
+const settingsStore = useSettingsStore();
+/**
+ * 切换主题
+ */
+const isDark = ref<boolean>(settingsStore.theme === ThemeEnum.DARK);
+const changeTheme = (val: any) => {
+    isDark.value = val;
+    settingsStore.changeTheme(isDark.value ? ThemeEnum.DARK : ThemeEnum.LIGHT);
+};
 </script>
 <style lang="scss" scoped>
 .navbar {
