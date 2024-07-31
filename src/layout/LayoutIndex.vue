@@ -1,37 +1,31 @@
 <template>
-    <BaseHeader />
-
-    <main id="page-content" class="page-content">
-        <div>
-            我是LayoutIndex
+    <el-container>
+        <el-header class="header-navbar">
+            <BaseHeader />
+        </el-header>
+        <el-main class="main-page">
             <router-view></router-view>
-        </div>
-    </main>
-
+        </el-main>
+        <el-footer class="footer-text">
+            <BaseFooter />
+        </el-footer>
+    </el-container>
 </template>
 <script setup lang="ts">
-
-
-
-
 </script>
 <style lang="scss">
-.page-content {
-    outline: none;
+.header-navbar {
+    top: 0;
+    left: 0;
+    position: sticky;
+    z-index: var(--nav-z-index);
 }
 
-.page-content .doc-content a {
-    display: inline-flex;
-    align-items: center;
+.main-page {
+    width: 100%;
 }
 
-.page-content .doc-content a.vp-link {
-    white-space: nowrap;
-}
-
-.page-content .doc-content a .link-icon {
-    margin-left: 0.25rem;
-    height: 1em;
-    width: 1em;
+.footer-text {
+    width: 100%;
 }
 </style>
