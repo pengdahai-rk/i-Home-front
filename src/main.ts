@@ -9,6 +9,9 @@ import router from '@/router'
 // 引入全量Element Icon
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 
+// 本地SVG图标
+import "virtual:svg-icons-register";
+
 // 样式
 import "element-plus/theme-chalk/dark/css-vars.css"
 import "virtual:uno.css"

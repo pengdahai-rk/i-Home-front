@@ -43,3 +43,27 @@ npm run test:unit
 ```sh
 npm run lint
 ```
+## 插件
+```sh
+# 自动导入 
+npm install -D unplugin-auto-import unplugin-vue-components
+# Element Plus
+npm install element-plus
+# 自动导入Icon
+npm i -D unplugin-icons
+# SVG图标
+npm install -D fast-glob
+npm install -D vite-plugin-svg-icons
+# SCSS
+npm i -D sass 
+# UnoCSS
+npm install -D unocss
+# Pinia
+npm install pinia
+# Axios
+npm install axios
+# vue-router
+npm install vue-router@next
+# vue3-i18n
+npm install vue3-i18n
+```

@@ -1,65 +1,53 @@
 <template>
-    <header class="navbar">
-        <div class="navbar-wrapper">
-            <div class="header-container">
-                <div class="logo-container">
-                    <a href="/">
-                        <img class="logo" src="@/assets/logo.svg" alt="Element Plus Logo" />
-                    </a>
-                </div>
-            </div>
-        </div>
-    </header>
+    <el-menu :ellipsis="false" default-active="blog" mode="horizontal" class="navbar-el-menu">
+        <el-menu-item index="logo">
+            <a href="/" title="i-Home">
+                <img class="logo" src="@/assets/logo.svg" alt="i-Home Logo" />
+            </a>
+        </el-menu-item>
+        <el-menu-item index="blog">Blog</el-menu-item>
+        <div class="flex-grow" />
+        <el-menu-item h="full" index="theme">
+            <el-switch v-model="isDark" inline-prompt :active-icon="Moon" :inactive-icon="Sunny"
+                @change="changeTheme" />
+        </el-menu-item>
+        <el-menu-item index="aboutMe">About Me</el-menu-item>
+        <el-menu-item index="signIn">Sign In</el-menu-item>
+        <el-menu-item index="github">
+            <a href="https://github.com/pengdahai-rk/i-Home-front" title="GitHub" target="_blank"
+                rel="noreferrer noopener">
+                <svg-icon icon-class="github" style="width: 2em;height: 2em;vertical-align: -0.65em;" />
+            </a>
+        </el-menu-item>
+    </el-menu>
 </template>
 <script setup lang="ts">
+import { ThemeEnum } from '@/enums/ThemeEnum';
+import { useSettingsStore } from "@/stores";
+import { Moon, Sunny } from '@element-plus/icons-vue';
+
+const settingsStore = useSettingsStore();
+/**
+ * 切换主题
+ */
+const isDark = ref<boolean>(settingsStore.theme === ThemeEnum.DARK);
+const changeTheme = (val: any) => {
+    isDark.value = val;
+    settingsStore.changeTheme(isDark.value ? ThemeEnum.DARK : ThemeEnum.LIGHT);
+};
 </script>
 <style lang="scss" scoped>
-.navbar {
-    top: 0;
-    left: 0;
-    position: relative;
-    z-index: var(--nav-z-index);
-    background-color:cyan;
+ul li {
+    padding: 8px;
 }
 
-.navbar-wrapper {
-    position: relative;
-    border-bottom: 1px solid var(--border-color);
+.navbar-el-menu {
     height: var(--header-height);
-    padding: 0 12px 0 24px;
     background-image: radial-gradient(transparent 1px, var(--bg-color) 1px);
-    background-size: 4px 4px;
-    backdrop-filter: saturate(50%) blur(4px);
-    -webkit-backdrop-filter: saturate(50%) blur(4px);
-    top: 0
 }
 
-.navbar-wrapper .header-container {
-    display: flex;
-    justify-content: space-between;
-    margin: 0 auto;
-}
-
-.navbar-wrapper .header-container .content {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    flex-grow: 1;
-}
-
-.logo-container {
-    display: flex;
-    align-items: center;
-    height: var(--header-height);
-}
-
-.logo-container>a {
-    height: 28px;
-    width: 128px;
-}
-
-.logo-container .logo {
+.logo {
     position: relative;
-    height: 100%;
+    height: var(--header-height);
 }
 </style>
