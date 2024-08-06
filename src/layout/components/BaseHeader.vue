@@ -1,5 +1,5 @@
 <template>
-    <el-menu :ellipsis="false" default-active="blog" mode="horizontal" class="navbar-el-menu">
+    <el-menu :ellipsis="false" default-active="blog" mode="horizontal" class="navbar-el-menu" :router="true">
         <el-menu-item index="logo">
             <a href="/" title="i-Home">
                 <img class="logo" src="@/assets/logo.svg" alt="i-Home Logo" />
@@ -7,12 +7,12 @@
         </el-menu-item>
         <el-menu-item index="blog">Blog</el-menu-item>
         <div class="flex-grow" />
+        <el-menu-item index="aboutMe">About Me</el-menu-item>
+        <el-menu-item index="signIn">Sign In</el-menu-item>
         <el-menu-item h="full" index="theme">
             <el-switch v-model="isDark" inline-prompt :active-icon="Moon" :inactive-icon="Sunny"
                 @change="changeTheme" />
         </el-menu-item>
-        <el-menu-item index="aboutMe">About Me</el-menu-item>
-        <el-menu-item index="signIn">Sign In</el-menu-item>
         <el-menu-item index="github">
             <a href="https://github.com/pengdahai-rk/i-Home-front" title="GitHub" target="_blank"
                 rel="noreferrer noopener">

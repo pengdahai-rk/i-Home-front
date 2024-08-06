@@ -12,7 +12,7 @@ export const constantRouter: RouteRecordRaw[] = [
     children: [
       {
         path: 'home',
-        component: () => import('@/views/home/HomeView.vue'),
+        component: () => import('@/views/home/index.vue'),
         name: 'HomeView', // 用于 keep-alive, 必须与SFC自动推导或者显示声明的组件name一致
         // https://cn.vuejs.org/guide/built-ins/keep-alive.html#include-exclude
         meta: {
@@ -22,6 +22,14 @@ export const constantRouter: RouteRecordRaw[] = [
           keepAlive: true,
           alwaysShow: false
         }
+      },
+      {
+        path: '/blog',
+        name: 'blog',
+        // route level code-splitting
+        // this generates a separate chunk (About.[hash].js) for this route
+        // which is lazy-loaded when the route is visited.
+        component: () => import('../views/blog/index.vue')
       },
       {
         path: '401',
