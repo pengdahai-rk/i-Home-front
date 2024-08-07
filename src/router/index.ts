@@ -30,16 +30,6 @@ export const constantRouter: RouteRecordRaw[] = [
         // this generates a separate chunk (About.[hash].js) for this route
         // which is lazy-loaded when the route is visited.
         component: () => import('../views/blog/index.vue')
-      },
-      {
-        path: '401',
-        component: () => import('@/views/error-page/401.vue'),
-        meta: { hidden: true }
-      },
-      {
-        path: '404',
-        component: () => import('@/views/error-page/404.vue'),
-        meta: { hidden: true }
       }
     ]
   },
@@ -55,6 +45,17 @@ export const constantRouter: RouteRecordRaw[] = [
     path: '/login',
     name: 'login',
     component: () => import('@/views/login/LoginView.vue')
+  },
+  {
+    path: '/401',
+    component: () => import('@/views/error-page/401.vue'),
+    meta: { hidden: true }
+  },
+  {
+    // 将匹配所有内容并将其放在 `route.params.pathMatch` 下
+    path: '/:pathMatch(.*)*',
+    name: 'NotFound',
+    component: () => import('@/views/error-page/404.vue')
   }
 ]
 

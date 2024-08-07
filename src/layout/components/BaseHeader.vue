@@ -1,6 +1,6 @@
 <template>
     <el-menu :ellipsis="false" default-active="blog" mode="horizontal" class="navbar-el-menu" :router="true">
-        <el-menu-item index="logo">
+        <el-menu-item index="/">
             <a href="/" title="i-Home">
                 <img class="logo" src="@/assets/logo.svg" alt="i-Home Logo" />
             </a>
@@ -9,11 +9,11 @@
         <div class="flex-grow" />
         <el-menu-item index="aboutMe">About Me</el-menu-item>
         <el-menu-item index="signIn">Sign In</el-menu-item>
-        <el-menu-item h="full" index="theme">
+        <el-menu-item h="full" index="/">
             <el-switch v-model="isDark" inline-prompt :active-icon="Moon" :inactive-icon="Sunny"
                 @change="changeTheme" />
         </el-menu-item>
-        <el-menu-item index="github">
+        <el-menu-item index="/">
             <a href="https://github.com/pengdahai-rk/i-Home-front" title="GitHub" target="_blank"
                 rel="noreferrer noopener">
                 <svg-icon icon-class="github" style="width: 2em;height: 2em;vertical-align: -0.65em;" />
