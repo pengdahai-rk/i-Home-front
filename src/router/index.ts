@@ -24,30 +24,33 @@ export const constantRouter: RouteRecordRaw[] = [
         }
       },
       {
-        path: '/blog',
+        path: 'blog',
         name: 'blog',
         // route level code-splitting
         // this generates a separate chunk (About.[hash].js) for this route
         // which is lazy-loaded when the route is visited.
         component: () => import('../views/blog/index.vue')
+      },
+      {
+        path: 'about-me',
+        name: 'aboutMe',
+        component: () => import('../views/about-me/index.vue')
       }
     ]
   },
   {
     path: '/user',
     name: 'user',
-    // route level code-splitting
-    // this generates a separate chunk (About.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () => import('../views/user/UserView.vue')
   },
   {
-    path: '/login',
-    name: 'login',
-    component: () => import('@/views/login/LoginView.vue')
+    path: '/sign-in',
+    name: 'signIn',
+    component: () => import('@/views/sign-in/index.vue')
   },
   {
     path: '/401',
+    name: 'ErrorPage401',
     component: () => import('@/views/error-page/401.vue'),
     meta: { hidden: true }
   },
@@ -73,7 +76,7 @@ const router = createRouter({
  * 重置路由
  */
 export function resetRouter() {
-  router.replace({ path: '/login' })
+  router.replace({ path: '/sign-in' })
 }
 
 export default router

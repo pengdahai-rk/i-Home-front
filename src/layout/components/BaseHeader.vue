@@ -1,21 +1,18 @@
 <template>
-    <el-menu :ellipsis="false" default-active="blog" mode="horizontal" class="navbar-el-menu" :router="true">
-        <el-menu-item index="/">
-            <a href="/" title="i-Home">
-                <img class="logo" src="@/assets/logo.svg" alt="i-Home Logo" />
-            </a>
+    <el-menu :ellipsis="false" default-active="home" mode="horizontal" class="navbar-el-menu" :router="true">
+        <el-menu-item index="/logo" :route="{ path: '/' }">
+            <img class="logo" src="@/assets/logo.svg" alt="i-Home Logo" />
         </el-menu-item>
+        <el-menu-item index="home">Home</el-menu-item>
         <el-menu-item index="blog">Blog</el-menu-item>
         <div class="flex-grow" />
-        <el-menu-item index="aboutMe">About Me</el-menu-item>
-        <el-menu-item index="signIn">Sign In</el-menu-item>
-        <el-menu-item h="full" index="/">
-            <el-switch v-model="isDark" inline-prompt :active-icon="Moon" :inactive-icon="Sunny"
-                @change="changeTheme" />
+        <el-menu-item index="aboutMe" :route="{ path: '/about-me' }">About Me</el-menu-item>
+        <el-menu-item index="signIn" :route="{ path: '/sign-in' }">Sign In</el-menu-item>
+        <el-menu-item h="full" index="theme">
+            <el-switch v-model="isDark" inline-prompt :active-icon="Moon" :inactive-icon="Sunny" @change="changeTheme" />
         </el-menu-item>
-        <el-menu-item index="/">
-            <a href="https://github.com/pengdahai-rk/i-Home-front" title="GitHub" target="_blank"
-                rel="noreferrer noopener">
+        <el-menu-item index="github" :route="{ path: '/' }">
+            <a href="https://github.com/pengdahai-rk/i-Home-front" title="GitHub" target="_blank" rel="noreferrer noopener">
                 <svg-icon icon-class="github" style="width: 2em;height: 2em;vertical-align: -0.65em;" />
             </a>
         </el-menu-item>
