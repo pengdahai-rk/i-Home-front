@@ -33,19 +33,19 @@ export const constantRouter: RouteRecordRaw[] = [
       },
       {
         path: 'about-me',
-        name: 'aboutMe',
+        name: 'AboutMe',
         component: () => import('../views/about-me/index.vue')
       }
     ]
   },
   {
     path: '/user',
-    name: 'user',
-    component: () => import('../views/user/UserView.vue')
+    name: 'User',
+    component: () => import('../views/user/index.vue')
   },
   {
     path: '/sign-in',
-    name: 'signIn',
+    name: 'SignIn',
     component: () => import('@/views/sign-in/index.vue')
   },
   {
