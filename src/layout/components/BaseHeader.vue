@@ -1,6 +1,7 @@
 <template>
-    <el-menu :ellipsis="false" default-active="home" mode="horizontal" class="navbar-el-menu" :router="true">
-        <el-menu-item index="/logo" :route="{ path: '/' }">
+    <el-menu :ellipsis="false" :default-active="$router.currentRoute.value.path" mode="horizontal" class="navbar-el-menu"
+        router>
+        <el-menu-item index="logo" style="opacity: 1;cursor:pointer" disabled>
             <img class="logo" src="@/assets/logo.svg" alt="i-Home Logo" />
         </el-menu-item>
         <el-menu-item index="home">Home</el-menu-item>
@@ -8,7 +9,7 @@
         <div class="flex-grow" />
         <el-menu-item index="aboutMe" :route="{ path: '/about-me' }">About Me</el-menu-item>
         <el-menu-item index="signIn" :route="{ path: '/sign-in' }">Sign In</el-menu-item>
-        <el-menu-item h="full" index="theme">
+        <el-menu-item h="full" index="theme" style="opacity: 1;cursor:auto" disabled>
             <el-switch v-model="isDark" inline-prompt :active-icon="Moon" :inactive-icon="Sunny" @change="changeTheme" />
         </el-menu-item>
         <el-menu-item index="github" :route="{ path: '/' }">
@@ -20,6 +21,7 @@
 </template>
 <script setup lang="ts">
 import { ThemeEnum } from '@/enums/ThemeEnum';
+import router from '@/router';
 import { useSettingsStore } from "@/stores";
 import { Moon, Sunny } from '@element-plus/icons-vue';
 

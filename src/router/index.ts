@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router'
 
-export const Layout = () => import('@/layout/LayoutIndex.vue')
+export const Layout = () => import('@/layout/index.vue')
 
 // 静态路由
 export const constantRouter: RouteRecordRaw[] = [
@@ -13,7 +13,7 @@ export const constantRouter: RouteRecordRaw[] = [
       {
         path: 'home',
         component: () => import('@/views/home/index.vue'),
-        name: 'HomeView', // 用于 keep-alive, 必须与SFC自动推导或者显示声明的组件name一致
+        name: 'Home', // 用于 keep-alive, 必须与SFC自动推导或者显示声明的组件name一致
         // https://cn.vuejs.org/guide/built-ins/keep-alive.html#include-exclude
         meta: {
           title: 'home',
