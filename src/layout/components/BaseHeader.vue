@@ -43,6 +43,7 @@ ul li {
 .navbar-el-menu {
     height: var(--header-height);
     background-image: radial-gradient(transparent 1px, var(--bg-color) 1px);
+    opacity: 0.9;
 }
 
 .logo {
