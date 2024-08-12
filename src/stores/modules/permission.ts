@@ -4,7 +4,7 @@ import { store } from "@/stores";
 import { listRoutes } from "@/api/menu/index";
 
 const modules = import.meta.glob("../../views/**/**.vue");
-const Layout = () => import("@/layout/LayoutIndex.vue");
+const Layout = () => import("@/layout/index.vue");
 
 /**
  * Use meta.role to determine if the current user has permission

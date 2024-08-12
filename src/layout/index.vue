@@ -30,7 +30,7 @@
 
 .footer-text {
     width: 100%;
-    position: absolute;
+    position: static;
     bottom: 0;
 }
 </style>
